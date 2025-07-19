@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 2</title>
+</head>
+<body>
+    <h2>Challenge 2: The Client is a Liar</h2>
+    <p>Enter the correct password to get the flag.</p>
+
+    <form onsubmit="checkPassword(); return false;">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        // This entire script runs in the user's browser.
+        // A hacker has full control over this code.
+        function checkPassword() {
+            // Get the value the user typed into the password box.
+            let userPassword = document.getElementById('password').value;
+            let resultElement = document.getElementById('result');
+
+            // This is the "secure" password check.
+            if (userPassword === "Pr0t3ct_Th1s_S3cr3t!") {
+                resultElement.innerHTML = "Correct! The flag is: THM{CL13NT_S1D3_1S_W34K}";
+                resultElement.style.color = 'green';
+            } else {
+                resultElement.innerHTML = "Incorrect Password!";
+                resultElement.style.color = 'red';
+            }
+        }
+    </script>
+
+</body>
+</html>

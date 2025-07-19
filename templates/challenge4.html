@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 4</title>
+</head>
+<body>
+    <h2>Challenge 4: The Untrusted Input</h2>
+    <p>Our new search feature will echo back whatever you search for.</p>
+
+    <!-- This form sends the search query back to this same page. -->
+    <form action="/challenge4" method="GET">
+        <input type="text" name="query" placeholder="Search...">
+        <input type="submit" value="Search">
+    </form>
+
+    <hr>
+
+    <!-- This is where the search result is displayed. -->
+    {% if search_query %}
+        <h3>Search results for: {{ search_query }}</h3>
+        <!-- We no longer need the '| safe' filter here because we are handling it in the Python code. -->
+    {% endif %}
+
+    <!-- The flag is not on this page. You must MAKE the flag appear. -->
+    <!-- Hint: Can you make the page run your own code? -->
+    <!-- The flag is THM{1NJ3CTI0N_SUCC3SS} -->
+
+</body>
+</html>
